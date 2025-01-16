@@ -7,6 +7,7 @@ import productRoutes from "./routes/product.route.js"
 import cartRoutes from "./routes/cart.routes.js"
 import couponRoutes from "./routes/coupon.route.js"
 import paymentRoutes from "./routes/payment.route.js"
+import analyticsRoute from "./routes/analytics.routes.js"
 
 
 
@@ -26,7 +27,9 @@ app.use("/api/auth", authRoutes)
 app.use("/api/product",productRoutes)
 app.use("/api/cart",cartRoutes)
 app.use("/api/coupons", couponRoutes)
-application.use("/api/payment",paymentRoutes)
+app.use("/api/payment",paymentRoutes)
+app.use("/api/analytics", analyticsRoute)
+
 
 
 app.listen(PORT, ()=>{
