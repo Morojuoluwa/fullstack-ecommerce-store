@@ -4,6 +4,7 @@ import HomePage from './pages/Homepage'
 import SignUpPage from './pages/SignUpPage'
 import LoginPage from './pages/LoginPage'
 import Navbar from './components/Navbar'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         </Routes>
 
       </div>
+      <Toaster/>
     </div>
   )
 }
