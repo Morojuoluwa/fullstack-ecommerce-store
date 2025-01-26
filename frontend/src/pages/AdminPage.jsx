@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import CreateProductForm from "../components/CreateProductForm";
 import ProductsList from "../components/ProductList";
 import AnalyticsTab from "../components/AnalyticsTab";
+import { useProductStore } from "../stores/useProductStore";
 
 
-// import { useProductStore } from "../stores/useProductStore";
+
 
 const tabs = [
 	{ id: "create", label: "Create Product", icon: PlusCircle },
@@ -16,11 +17,11 @@ const tabs = [
 
 const AdminPage = () => {
 	// const [activeTab, setActiveTab] = useState("create");
-	// const { fetchAllProducts } = useProductStore();
+	const { fetchAllProducts } = useProductStore();
 
-	// useEffect(() => {
-	// 	fetchAllProducts();
-	// }, [fetchAllProducts]);
+	useEffect(() => {
+		fetchAllProducts();
+	}, [fetchAllProducts]);
 
 	return (
 		<div className='min-h-screen relative overflow-hidden'>
