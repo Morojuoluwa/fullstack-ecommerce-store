@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CreateProductForm from "../components/CreateProductForm";
 import ProductsList from "../components/ProductList";
-import AnalyticsTab from "../components/AnalyticsTab";
+// import AnalyticsTab from "../components/AnalyticsTab";
 import { useProductStore } from "../stores/useProductStore";
 
 
@@ -16,7 +16,7 @@ const tabs = [
 ];
 
 const AdminPage = () => {
-	// const [activeTab, setActiveTab] = useState("create");
+	const [activeTab, setActiveTab] = useState("create");
 	const { fetchAllProducts } = useProductStore();
 
 	useEffect(() => {
@@ -53,7 +53,7 @@ const AdminPage = () => {
 				</div>
 				{activeTab === "create" && <CreateProductForm />}
 				{activeTab === "products" && <ProductsList />}
-				{activeTab === "analytics" && <AnalyticsTab />}
+				{/* {activeTab === "analytics" && <AnalyticsTab />} */}
 			</div>
 		</div>
 
