@@ -19,6 +19,8 @@ const app = express()
 
 const PORT = process.env.PORT
 
+const __dirname = Path.resolve() 
+
 app.use(express.json({limit:"10mb"}))
 app.use(cookieParser())
 
@@ -29,6 +31,14 @@ app.use("/api/cart",cartRoutes)
 app.use("/api/coupons", couponRoutes)
 app.use("/api/payment",paymentRoutes)
 app.use("/api/analytics", analyticsRoute)
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "frontend/dist")))
+
+    app.get("*", (req,res)=>{
+        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+    })
+}
 
 
 
